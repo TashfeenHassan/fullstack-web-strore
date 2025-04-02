@@ -1,0 +1,83 @@
+Architecture Overview
+Each microservice will be independent and communicate via REST APIs or event-driven messaging (e.g., RabbitMQ/Kafka).
+
+Microservices Breakdown:
+User Service – Authentication & user management (Supabase Auth).
+
+Product Service – CRUD operations for products.
+
+Cart Service – Handles cart operations with atomic updates.
+
+Order Service – Manages orders & order processing.
+
+Payment Service – Handles payments (Stripe).
+
+Notification Service – Sends emails and order updates.
+
+API Gateway (Optional) – Central entry point for frontend requests.
+
+Each service will be deployed as a separate container (Dockerized) and use PostgreSQL on Supabase.
+
+Week-by-Week Development Plan
+Week 1: Planning & Environment Setup
+📌 Goals: Define microservices, set up repositories, and configure development tools.
+
+✅ Define API contracts for microservices.
+✅ Design PostgreSQL schema (split across services using shared DB or separate DBs).
+✅ Set up GitHub repositories for each microservice.
+✅ Configure Docker + Docker Compose for multi-container deployment.
+✅ Implement Nginx as a reverse proxy for routing.
+✅ Install PostgreSQL (or Supabase) for each microservice.
+✅ Set up Supabase Auth for the User Service.
+
+Week 2: Backend Development (Microservices Core)
+📌 Goals: Develop core microservices and establish inter-service communication.
+
+✅ Implement User Service (Signup, Login, Logout).
+✅ Develop Product Service (CRUD for products).
+✅ Build Cart Service (Add/remove/update items with atomic updates).
+✅ Use RabbitMQ/Kafka for async communication (e.g., order status updates).
+✅ Implement Nginx or API Gateway for routing frontend requests to services.
+
+Week 3: Frontend Development & Integration
+📌 Goals: Build UI and integrate with backend services.
+
+✅ Design UI with Bootstrap.
+✅ Implement Redux for state management.
+✅ Build product listing, cart, and checkout components.
+✅ Connect frontend to API Gateway (or directly to microservices).
+✅ Implement lazy loading for product images.
+
+Week 4: Order, Payments & Notifications
+📌 Goals: Implement checkout, payments, and notifications.
+
+✅ Develop Order Service (Create, update, track orders).
+✅ Implement Payment Service (Stripe integration).
+✅ Implement Notification Service (Nodemailer for email updates).
+✅ Ensure atomic transactions between Order & Payment Services.
+
+Week 5: Deployment & Scalability
+📌 Goals: Deploy services and make the system scalable.
+
+✅ Dockerize each microservice.
+✅ Deploy PostgreSQL on Supabase (or managed cloud DB).
+✅ Host frontend on Vercel, Render, or AWS S3 + CloudFront.
+✅ Deploy backend on Render, DigitalOcean, or AWS EC2.
+✅ Implement load balancing (Nginx).
+✅ Set up CI/CD (GitHub Actions) for auto-deployment.
+
+Week 6: Optimization, Security & Testing
+📌 Goals: Improve performance, secure APIs, and run tests.
+
+✅ Implement caching (Redis) for product listings.
+✅ Add security layers (CORS, rate limiting, JWT expiration).
+✅ Write unit & integration tests for each microservice.
+✅ Perform E2E testing (Cypress).
+✅ Conduct load testing (k6 or JMeter).
+
+Final Deliverables:
+✔️ Fully functional, microservices-based eCommerce store (MERN + PostgreSQL).
+✔️ Independent microservices for scalability.
+✔️ Secure authentication (Supabase Auth + RLS).
+✔️ Stripe integration for payments.
+✔️ CI/CD pipeline for automated deployment.
