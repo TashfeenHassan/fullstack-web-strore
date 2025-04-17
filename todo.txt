@@ -30,6 +30,53 @@ Week 1: Planning & Environment Setup
 ✅ Install PostgreSQL (or Supabase) for each microservice.
 ✅ Set up Supabase Auth for the User Service.
 
+✅ 1. Define API Contracts for Microservices
+Each service should expose a REST API with clearly defined endpoints. Here's a simple contract outline for each:
+
+User Service
+POST /register → Create a new user
+
+POST /login → Authenticate user
+
+GET /me → Get current user details
+
+Product Service
+GET /products → List all products
+
+GET /products/:id → Get a single product
+
+POST /products → Create a new product
+
+PUT /products/:id → Update a product
+
+DELETE /products/:id → Delete a product
+
+Cart Service
+GET /cart/:userId → Get user cart
+
+POST /cart → Add item to cart
+
+PUT /cart/:itemId → Update cart item quantity
+
+DELETE /cart/:itemId → Remove cart item
+
+Order Service
+POST /orders → Create an order
+
+GET /orders/:userId → Get user orders
+
+GET /orders/admin → Admin panel orders
+
+Payment Service
+POST /payment/checkout → Create a checkout session (Stripe)
+
+POST /payment/webhook → Handle payment webhooks
+
+Notification Service
+POST /notify → Send notification
+
+GET /notifications/:userId → Get user notifications
+
 Week 2: Backend Development (Microservices Core)
 📌 Goals: Develop core microservices and establish inter-service communication.
 

@@ -72,5 +72,9 @@ function CustomNavbar() {
     </nav>
   );
 }
-
+<div>
+  <p>
+    This is a custom navbar component styled with Bootstrap. It features a sticky position, a brand name in the center, and a search bar on the right side. The navbar has a pastel pinkish-white background and rounded corners. The search bar changes color when focused, providing a subtle interactive effect.
+  </p>
+</div>
 export default CustomNavbar;
